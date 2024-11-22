@@ -1,0 +1,37 @@
+/* Style for the header and search bar */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5; 
+  }
+  
+  .search-container {
+    display: flex;
+  }
+  
+  .search-container input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+  }
+  
+  .search-container button {
+    width: 40px; /* Width of the icon button */
+    background-color: #296c98;
+    background-image: url('Website/search-icon.png'); /* Adjust path if necessary */
+    background-size: 20px 20px; /* Size of the icon */
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    background-color: #555;
+  }
+  

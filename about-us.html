@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Beyond Pages</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="webcss.css" />
+    <link rel="stylesheet" href="about-us.css" /> <!-- Link to external CSS file -->
+  </head>
+  <body>
+
+        <!-- Header with search bar -->
+    <header class="first-header">
+      <div class="header-logo">
+        <img src="logored.jpg" alt="Logo" class="logo-image" />
+      </div>
+      <div class="search-container">
+        <form action="/search" method="get">
+          <div class="search-bar-wrapper">
+            <input type="text" placeholder="Search..." name="query" id="search-input" />
+            <button type="submit" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+              <!-- Shopping Cart -->
+              <div class="cart-container">
+                <button id="cart-button">
+                  <img src="cart.png" alt="Cart Icon" class="cart-icon" />
+                  (<span id="cart-count">0</span>)
+                </button>
+                <div id="cart-dropdown" class="cart-dropdown">
+                  <h2>Cart Items</h2>
+                  <ul id="cart-items"></ul>
+                  <p>Total: $<span id="cart-total">0.00</span></p>
+                </div>
+              </div>
+      <div class="profile-icon" id="profile-icon">
+        <a href="signup.html">Sign Up</a>
+        <img src="profileicon.png" alt="Profile" class="profile-image" />
+      </div>
+    </header>
+    
+        <!-- Navigation Bar -->
+        <nav>
+          <div class="menu">
+            <div class="logo">
+              <a href="#"></a>
+            </div>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <!-- Books dropdown-->
+              <li class="dropdown">
+                <a href="#">Books</a>
+                <div class="dropdown-content">
+                  <a href="Classics.html">Classics</a>
+                  <a href="Mystery.html">Mystery and Thriller</a>
+                  <a href="Comics.html">Comics</a>
+                  <a href="Scifi.html">Sci-Fi</a>
+                  <a href="Romance.html">Romance</a>
+                  <a href="Fantasy.html">Fantasy</a>
+                  <a href="Short stories.html">Short Stories</a>
+                </div>
+              </li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </nav>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-us">
+      <div class="about-us-header">
+        <h1>About Beyond Pages</h1>
+        <p>Bringing stories to life</p>
+      </div>
+      <div class="about-us-content">
+        <p>
+          At Beyond Pages, we believe that stories are the soul of humanity, and every book we publish carries
+          the magic of storytelling. Our mission is to make books accessible to all, bring innovative narratives
+          to readers around the world, and elevate voices that inspire and challenge. Whether it's a classic novel,
+          a gripping mystery, a fantasy adventure, or a heartwarming romance, we are dedicated to ensuring that
+          every book we publish goes beyond the page, capturing the imaginations of those who dare to dream.
+        </p>
+        <p>
+          We are passionate about the power of words and how they can change lives. Join us as we continue to bring
+          stories to life, creating lasting connections with readers through every turn of the page.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Beyond Pages Publishing House. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publishing Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="webcss.css" /> <!-- Link to your CSS file -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  </head>
+  <body>
+    <!-- Header with search bar -->
+    <header class="first-header">
+      <div class="header-logo">
+        <img src="logored.jpg" alt="Logo" class="logo-image" />
+      </div>
+      <div class="search-container">
+        <form action="/search" method="get" class="search-form">
+          <div class="search-bar-wrapper">
+            <input type="text" placeholder="Search for books..." name="query" id="search-input" />
+            <button type="submit" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+        <!-- Shopping Cart -->
+      <div class="cart-container">
+        <button id="cart-button">
+          <img src="cart.png" alt="Cart Icon" class="cart-icon" />
+          (<span id="cart-count">0</span>)
+        </button>
+        <div id="cart-dropdown" class="cart-dropdown">
+          <h2>Cart Items</h2>
+          <ul id="cart-items"></ul>
+          <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+      </div>
+    
+      </div>
+      <div class="profile-icon" id="profile-icon">
+        <a href="signup.html">Sign Up</a>
+        <img src="profileicon.png" alt="Profile" class="profile-image" />
+      </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <a href="#"></a>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <!-- Books dropdown-->
+          <li class="dropdown">
+            <a href="#">Books</a>
+            <div class="dropdown-content">
+              <a href="Classics.html">Classics</a>
+              <a href="Mystery.html">Mystery and Thriller</a>
+              <a href="Comics.html">Comics</a>
+              <a href="Scifi.html">Sci-Fi</a>
+              <a href="Romance.html">Romance</a>
+              <a href="Fantasy.html">Fantasy</a>
+              <a href="Short stories.html">Short Stories</a>
+            </div>
+          </li>
+          <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+<!-- Hero Section with Trending Books Slider -->
+<div class="slider">
+  <!-- Slider Item 1 -->
+  <div class="slider-item active">
+    <div class="book-image">
+      <img src="Song.jpg" alt="Book Cover" />
+    </div>
+    <div class="book-details">
+      <h1>The Best of All Possible Worlds</h1>
+      <h2>Michael Kempe</h2>
+      <p>
+        A gripping portrait of the man considered the last universal genius
+        that takes us on a mind-expanding journey through the history of
+        ideas.
+      </p>
+      <button>Read More</button>
+    </div>
+  </div>
+  
+  <!-- Slider Item 2 -->
+  <div class="slider-item">
+    <div class="book-image">
+      <img src="AnotherBook.jpg" alt="Another Book Cover" />
+    </div>
+    <div class="book-details">
+      <h1>Possible Worlds</h1>
+      <h2>Michael Kempe</h2>
+      <p>
+        Another gripping story that challenges our understanding of the world
+        through history and thought-provoking ideas.
+      </p>
+      <button>Read More</button>
+    </div>
+  </div>
+
+  <!-- Slider Controls -->
+  <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+  <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+</div>
+
+    <script src="loginscript.js"></script>
+    <script src="slider.js"></script> <!-- For slider functionality -->
+    <scrpt src="cart.js"></scrpt>
+  </body>
+</html>
+
+   

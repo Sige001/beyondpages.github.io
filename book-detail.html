@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Detail</title>
+</head>
+<body>
+  <header>
+    <h1>Book Details</h1>
+  </header>
+  <main>
+    <div id="book-detail-container">
+      <img id="book-cover" src="" alt="Book Cover" />
+      <h2 id="book-title"></h2>
+      <p id="book-author"></p>
+      <p id="book-description"></p>
+
+      <div id="book-options">
+        <label>Paperback</label>
+        <label>Hardcover</label>
+      </div>
+
+      <button>Add to Cart</button>
+    </div>
+  </main>
+
+  <script>
+    // Get the 'book' query parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookId = urlParams.get('book');
+
+    // Dummy book data for each book (replace this with actual data)
+    const books = {
+      1: { title: "Angels and Demons", author: "Dan Brown", description: "A thriller novel by Dan Brown", image: "images/Mystery/Angels.jpg" },
+      2: { title: "The Bone Collector", author: "Jeffery Deaver", description: "A crime novel by Jeffery Deaver", image: "images/Mystery/Collector.jpg" },
+      // Add the rest of the books similarly
+    };
+
+    // Fetch and display book details based on the book ID
+    const book = books[bookId];
+    if (book) {
+      document.getElementById('book-title').innerText = book.title;
+      document.getElementById('book-author').innerText = `Author: ${book.author}`;
+      document.getElementById('book-description').innerText = book.description;
+      document.getElementById('book-cover').src = book.image;
+    } else {
+      document.getElementById('book-detail-container').innerHTML = "<p>Book not found</p>";
+    }
+  </script>
+</body>
+</html>

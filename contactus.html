@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publishing Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="webcss.css" /> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="contactus.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <!-- Header with search bar -->
+    <header class="first-header">
+      <div class="header-logo">
+        <img src="logored.jpg" alt="Logo" class="logo-image" />
+      </div>
+      <div class="search-container">
+        <form action="/search" method="get" class="search-form">
+          <div class="search-bar-wrapper">
+            <input type="text" placeholder="Search for books..." name="query" id="search-input" />
+            <button type="submit" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+        <!-- Shopping Cart -->
+      <div class="cart-container">
+        <button id="cart-button">
+          <img src="cart.png" alt="Cart Icon" class="cart-icon" />
+          (<span id="cart-count">0</span>)
+        </button>
+        <div id="cart-dropdown" class="cart-dropdown">
+          <h2>Cart Items</h2>
+          <ul id="cart-items"></ul>
+          <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+      </div>
+    
+      </div>
+      <div class="profile-icon" id="profile-icon">
+        <a href="signup.html">Sign Up</a>
+        <img src="profileicon.png" alt="Profile" class="profile-image" />
+      </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <a href="#"></a>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <!-- Books dropdown-->
+          <li class="dropdown">
+            <a href="#">Books</a>
+            <div class="dropdown-content">
+              <a href="Classics.html">Classics</a>
+              <a href="Mystery.html">Mystery and Thriller</a>
+              <a href="Comics.html">Comics</a>
+              <a href="Scifi.html">Sci-Fi</a>
+              <a href="Romance.html">Romance</a>
+              <a href="Fantasy.html">Fantasy</a>
+              <a href="Short stories.html">Short Stories</a>
+            </div>
+          </li>
+          <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  <main class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>If you have any questions, suggestions, or inquiries, feel free to reach out to us. We'd love to hear from you!</p>
+
+      <div class="contact-details">
+        <h3>Our Office</h3>
+        <p><strong>Address:</strong> 123 Fiction Avenue, Literary City, NY 45678</p>
+        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        <p><strong>Email:</strong> contact@beyondpages.com</p>
+      </div>
+
+      <form action="submit-form.php" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Beyond Pages. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

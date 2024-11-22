@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="webcss.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <!-- Header with search bar -->
+    <header class="first-header">
+      <div class="header-logo">
+        <img src="logored.jpg" alt="Logo" class="logo-image" />
+      </div>
+      <div class="search-container">
+        <form action="/search" method="get">
+          <div class="search-bar-wrapper">
+            <input type="text" placeholder="Search..." name="query" id="search-input" />
+            <button type="submit" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+              <!-- Shopping Cart -->
+              <div class="cart-container">
+                <button id="cart-button">
+                  <img src="cart.png" alt="Cart Icon" class="cart-icon" />
+                  (<span id="cart-count">0</span>)
+                </button>
+                <div id="cart-dropdown" class="cart-dropdown">
+                  <h2>Cart Items</h2>
+                  <ul id="cart-items"></ul>
+                  <p>Total: $<span id="cart-total">0.00</span></p>
+                </div>
+              </div>
+      <div class="profile-icon" id="profile-icon">
+        <a href="signup.html">Sign Up</a>
+        <img src="profileicon.png" alt="Profile" class="profile-image" />
+      </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <a href="#"></a>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <!-- Books dropdown-->
+          <li class="dropdown">
+            <a href="#">Books</a>
+            <div class="dropdown-content">
+              <a href="Classics.html">Classics</a>
+              <a href="Mystery.html">Mystery and Thriller</a>
+              <a href="Comics.html">Comics</a>
+              <a href="Scifi.html">Sci-Fi</a>
+              <a href="Romance.html">Romance</a>
+              <a href="Fantasy.html">Fantasy</a>
+              <a href="Short stories.html">Short Stories</a>
+            </div>
+          </li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Book Details Section -->
+    <div class="book-details">
+      <div class="book-info">
+        <img src="/Website/Classics/Pride.jpg" alt="Book Cover" class="book-cover">
+        <div class="details-text">
+          <h1 id="book-title">Loading...</h1>
+          <h3 id="book-author">Loading...</h3>
+          <p class="description" id="book-description">Loading...</p>
+
+          <div class="book-format">
+            <label for="paperback">Paperback</label>
+            <input type="radio" id="paperback" name="format" value="paperback" checked>
+            <span>$17.99</span>
+            <label for="hardcover">Hardcover</label>
+            <input type="radio" id="hardcover" name="format" value="hardcover">
+            <span>$19.99</span>
+          </div>
+
+          <div class="quantity-selector">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" step="1">
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function getBookDetails() {
+        const params = new URLSearchParams(window.location.search);
+        const book = params.get('book');
+
+        if (book) {
+          document.getElementById('book-title').textContent = book;
+
+          if (book === 'Pride-and-Prejudice') {
+            document.getElementById('book-author').textContent = 'Jane Austen';
+            document.getElementById('book-description').textContent = 'Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813.';
+          } else if (book === 'Moby-Dick') {
+            document.getElementById('book-author').textContent = 'Herman Melville';
+            document.getElementById('book-description').textContent = 'Moby-Dick is a novel by Herman Melville, published in 1851.';
+          } else {
+            document.getElementById('book-author').textContent = 'Author not found';
+            document.getElementById('book-description').textContent = 'Details not available.';
+          }
+        } else {
+          document.getElementById('book-title').textContent = 'Book not found';
+          document.getElementById('book-author').textContent = '';
+          document.getElementById('book-description').textContent = 'Please select a book to view details.';
+        }
+      }
+
+      // Function to add book to cart
+      function addToCart() {
+        const title = document.getElementById('book-title').textContent;
+        const author = document.getElementById('book-author').textContent;
+        const quantity = document.getElementById('quantity').value;
+        const format = document.querySelector('input[name="format"]:checked').value;
+        const price = format === 'paperback' ? 17.99 : 19.99;
+
+        const cartItem = {
+          title,
+          author,
+          format,
+          quantity,
+          price: price * quantity, // Calculate total price for quantity
+        };
+
+        // Get cart from localStorage or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the new book to the cart
+        cart.push(cartItem);
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${title} has been added to your cart!`);
+      }
+
+      // Add event listener for the 'Add to Cart' button
+      document.querySelector('.add-to-cart').addEventListener('click', addToCart);
+
+      window.onload = getBookDetails;
+    </script>
+
+  </body>
+</html>
+
+
+
